@@ -4,19 +4,15 @@
 /* ── Tokens ─────────────────────────────────────────────────── */
 :root {
   --night:         #0d1a14;
-  --night-2:       #111f18;
   --sage:          #2d7a5f;
+  --sage-dark:     #236150;
   --sage-bright:   #4aab87;
-  --sage-pale:     #d4ede5;
-  --sage-faint:    #f2faf7;
   --cream:         #f8f7f4;
-  --cream-2:       #f0ede6;
   --white:         #ffffff;
   --text-1:        #111814;
   --text-2:        #3d5248;
   --text-3:        #7a9a8a;
   --border:        #dde6e1;
-  --border-warm:   #ccd8d1;
   --green-wa:      #25d366;
 
   --font-display:  'Cormorant Garamond', Georgia, serif;
@@ -87,7 +83,7 @@ body {
   color: var(--white);
   border-color: var(--sage);
 }
-.btn-primary:hover { background: #236150; border-color: #236150; }
+.btn-primary:hover { background: var(--sage-dark); border-color: var(--sage-dark); }
 
 .btn-outline {
   background: transparent;
@@ -159,6 +155,7 @@ body {
   letter-spacing: .32em;
   color: var(--white);
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .nav-actions {
@@ -385,7 +382,6 @@ body {
   line-height: 1.4;
 }
 
-.trust-sep { display: none; }
 
 /* ── Section commune ─────────────────────────────────────────── */
 .section-header {

@@ -32,7 +32,6 @@
 
   <!-- Favicon SVG inline -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1a14'/><text y='.9em' font-size='72' font-family='Georgia,serif' fill='%234aab87' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>K</text></svg>">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1a14'/><text y='.9em' font-size='72' font-family='Georgia,serif' fill='%234aab87' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>K</text></svg>">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +72,7 @@
   <!-- Navigation -->
   <nav class="nav" id="nav" aria-label="Navigation principale">
     <div class="container nav-inner">
-      <span class="logo">KARA</span>
+      <a href="/" class="logo">KARA</a>
       <div class="nav-actions">
         <a href="https://demo-kara.compeel.com" target="_blank" rel="noopener" class="btn btn-demo-nav">Voir la démo</a>
         <a href="#contact" class="btn btn-outline">Nous contacter</a>
@@ -112,7 +111,8 @@
         <p class="hero-note">Pas de cloud · Pas d'abonnement · Fonctionne hors-ligne</p>
       </div>
 
-      <!-- QR code démo — visible desktop uniquement -->
+      <!-- QR code démo — visible desktop ≥1150px uniquement -->
+      <!-- Token démo public — accès lecture seule, pas de données sensibles -->
       <div class="hero-qr" id="demo-qr-wrap" aria-label="QR code pour accéder à la démo KARA sur mobile">
         <a id="demo-qr-link"
            href="https://demo-kara.compeel.com/auth/auto-login?token=czEan43k2l8LR3kJCBoO2w49kUj4U06g"
@@ -145,17 +145,14 @@
             <span class="trust-num">100%</span>
             <span class="trust-label">Données chez vous</span>
           </div>
-          <div class="trust-sep" aria-hidden="true"></div>
           <div class="trust-item">
             <span class="trust-num">Zéro</span>
             <span class="trust-label">Donnée externalisée</span>
           </div>
-          <div class="trust-sep" aria-hidden="true"></div>
           <div class="trust-item">
             <span class="trust-num">&lt; 3 min</span>
             <span class="trust-label">Par transcription</span>
           </div>
-          <div class="trust-sep" aria-hidden="true"></div>
           <div class="trust-item">
             <span class="trust-num">Offline</span>
             <span class="trust-label">Mode sans connexion</span>
