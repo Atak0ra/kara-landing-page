@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales — KARA</title>
+  <meta name="description" content="Mentions légales et politique de confidentialité de KARA, solution de mémoire clinique vocale pour structures médicales.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://kara.compeel.com/mentions-legales.html">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1a14'/><text y='.9em' font-size='72' font-family='Georgia,serif' fill='%234aab87' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>K</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Styles spécifiques à la page mentions légales */
+    .legal-hero {
+      background: linear-gradient(160deg, #0d1a14 0%, #111f18 60%, #0d1a14 100%);
+      padding: 5rem 0 4rem;
+    }
+
+    .legal-hero-inner {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-hero-line {
+      width: 2rem;
+      height: 1px;
+      background: var(--sage-bright);
+      flex-shrink: 0;
+    }
+
+    .legal-hero-kicker {
+      font-size: .6875rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--sage-bright);
+    }
+
+    .legal-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+
+    .legal-body {
+      padding: 5rem 0 7rem;
+      background: var(--cream);
+    }
+
+    .legal-content {
+      max-width: 720px;
+    }
+
+    .legal-section {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .legal-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--text-1);
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .legal-section h3 {
+      font-family: var(--font-body);
+      font-size: .9375rem;
+      font-weight: 600;
+      color: var(--text-1);
+      letter-spacing: .01em;
+      margin-top: 1.75rem;
+      margin-bottom: .75rem;
+    }
+
+    .legal-section p {
+      font-size: .9375rem;
+      color: var(--text-2);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .legal-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-section ul {
+      list-style: none;
+      padding: 0;
+      margin: .75rem 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .legal-section ul li {
+      font-size: .9375rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .legal-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .65em;
+      width: .375rem;
+      height: .375rem;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    .legal-section a {
+      color: var(--sage);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .15s;
+    }
+
+    .legal-section a:hover {
+      color: var(--sage-bright);
+    }
+
+    .legal-highlight {
+      background: var(--sage-faint);
+      border: 1px solid var(--sage-pale);
+      border-left: 3px solid var(--sage);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+
+    .legal-highlight p {
+      font-size: .875rem;
+      color: var(--text-2);
+      margin: 0;
+    }
+
+    .legal-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--sage);
+      text-decoration: none;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      transition: color .15s;
+    }
+
+    .legal-back:hover { color: var(--sage-bright); }
+
+    .legal-back svg {
+      transition: transform .15s;
+    }
+
+    .legal-back:hover svg {
+      transform: translateX(-3px);
+    }
+
+    @media (max-width: 768px) {
+      .legal-hero { padding: 3.5rem 0 3rem; }
+      .legal-body { padding: 3rem 0 5rem; }
+      .legal-section { margin-bottom: 2.5rem; padding-bottom: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip link accessibilité -->
+  <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" aria-label="Navigation principale">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" style="text-decoration:none;">KARA</a>
+      <div class="nav-actions">
+        <a href="https://demo-kara.compeel.com" target="_blank" rel="noopener" class="btn btn-demo-nav">Voir la démo</a>
+        <a href="index.html#contact" class="btn btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="legal-hero">
+    <div class="container">
+      <div class="legal-hero-inner">
+        <span class="legal-hero-line" aria-hidden="true"></span>
+        <span class="legal-hero-kicker">Informations légales</span>
+      </div>
+      <h1 class="legal-title">Mentions légales</h1>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <div class="legal-body">
+      <div class="container">
+        <div class="legal-content">
+
+          <a href="index.html" class="legal-back">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+            </svg>
+            Retour à l'accueil
+          </a>
+
+          <!-- Éditeur -->
+          <section class="legal-section" id="editeur">
+            <h2>Éditeur du site</h2>
+            <p>Le site <strong>kara.compeel.com</strong> est édité par :</p>
+            <ul>
+              <li><strong>Société :</strong> Compeel</li>
+              <li><strong>Activité :</strong> Développement et déploiement de solutions logicielles pour structures médicales</li>
+              <li><strong>Pays :</strong> Togo</li>
+              <li><strong>Téléphone :</strong> <a href="tel:+22892178726">+228 92 17 87 26</a></li>
+              <li><strong>WhatsApp :</strong> <a href="https://wa.me/22892178726" target="_blank" rel="noopener">+228 92 17 87 26</a></li>
+            </ul>
+          </section>
+
+          <!-- Hébergement -->
+          <section class="legal-section" id="hebergement">
+            <h2>Hébergement</h2>
+            <p>
+              Ce site vitrine est hébergé sur des serveurs tiers. Le logiciel KARA, quant à lui,
+              est déployé <strong>exclusivement sur les serveurs locaux de la structure médicale cliente</strong>.
+              Aucune donnée patient ne transite par nos serveurs ni par un service cloud externe.
+            </p>
+          </section>
+
+          <!-- Propriété intellectuelle -->
+          <section class="legal-section" id="propriete">
+            <h2>Propriété intellectuelle</h2>
+            <p>
+              L'ensemble des contenus présents sur ce site (textes, visuels, code, marque KARA)
+              sont la propriété exclusive de Compeel et sont protégés par les lois applicables
+              en matière de propriété intellectuelle.
+            </p>
+            <p>
+              Toute reproduction, représentation, modification ou exploitation, totale ou partielle,
+              sans autorisation écrite préalable de Compeel est strictement interdite.
+            </p>
+          </section>
+
+          <!-- Politique de confidentialité -->
+          <section class="legal-section" id="confidentialite">
+            <h2>Politique de confidentialité</h2>
+
+            <div class="legal-highlight">
+              <p>
+                <strong>Principe fondamental de KARA :</strong> le logiciel KARA ne collecte,
+                ne stocke ni ne transmet aucune donnée patient vers l'extérieur.
+                Toutes les données médicales restent sur le serveur local de votre structure.
+              </p>
+            </div>
+
+            <h3>Données collectées sur ce site vitrine</h3>
+            <p>
+              Ce site vitrine ne collecte aucune donnée personnelle de manière automatique.
+              Aucun cookie de tracking, aucun outil d'analyse comportementale n'est utilisé.
+            </p>
+            <p>
+              Si vous nous contactez par téléphone ou WhatsApp, les informations que vous
+              communiquez (nom, structure, besoins) sont utilisées uniquement pour répondre
+              à votre demande et ne sont pas partagées avec des tiers.
+            </p>
+
+            <h3>Données traitées par le logiciel KARA</h3>
+            <p>
+              Le logiciel KARA traite des données de santé à caractère personnel (enregistrements
+              vocaux, transcriptions, dossiers patients). Ces données sont :
+            </p>
+            <ul>
+              <li>Stockées exclusivement sur le serveur local de la structure médicale</li>
+              <li>Accessibles uniquement au personnel autorisé de la structure</li>
+              <li>Jamais transmises à Compeel ni à aucun service externe</li>
+              <li>Sous la responsabilité exclusive de la structure médicale cliente</li>
+            </ul>
+            <p>
+              La structure médicale est responsable du traitement de ces données au sens
+              de la réglementation applicable et doit s'assurer de leur sécurisation.
+            </p>
+
+            <h3>Vos droits</h3>
+            <p>
+              Pour toute question relative à vos données personnelles ou pour exercer vos droits
+              (accès, rectification, suppression), contactez-nous au
+              <a href="tel:+22892178726">+228 92 17 87 26</a> ou via
+              <a href="https://wa.me/22892178726" target="_blank" rel="noopener">WhatsApp</a>.
+            </p>
+          </section>
+
+          <!-- Limitation de responsabilité -->
+          <section class="legal-section" id="responsabilite">
+            <h2>Limitation de responsabilité</h2>
+            <p>
+              Compeel s'efforce de maintenir les informations de ce site à jour et exactes.
+              Toutefois, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité
+              des informations diffusées.
+            </p>
+            <p>
+              Compeel ne saurait être tenu responsable des dommages directs ou indirects
+              résultant de l'utilisation de ce site ou du logiciel KARA en dehors des
+              conditions d'utilisation convenues contractuellement.
+            </p>
+          </section>
+
+          <!-- Droit applicable -->
+          <section class="legal-section" id="droit">
+            <h2>Droit applicable</h2>
+            <p>
+              Les présentes mentions légales sont soumises au droit togolais.
+              Tout litige relatif à l'utilisation de ce site ou du logiciel KARA
+              sera soumis à la compétence des juridictions compétentes du Togo.
+            </p>
+            <p>
+              <em>Dernière mise à jour : juin 2025</em>
+            </p>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo">KARA</span>
+        <p>Mémoire clinique vocale · Données hébergées chez vous · Afrique francophone</p>
+      </div>
+      <nav class="footer-links" aria-label="Liens du pied de page">
+        <a href="mentions-legales.html" aria-current="page">Mentions légales</a>
+        <a href="mentions-legales.html#confidentialite">Politique de confidentialité</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 KARA — Compeel. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav : fond opaque au scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
