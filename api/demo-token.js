@@ -8,7 +8,7 @@
  * Endpoint : GET /api/demo-token
  * Réponse  : { "url": "https://demo-kara.compeel.com/auth/auto-login?token=..." }
  */
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   const token = process.env.DEMO_ACCESS_TOKEN;
 
   if (!token) {
@@ -19,4 +19,4 @@ export default function handler(req, res) {
   res.status(200).json({
     url: `https://demo-kara.compeel.com/auth/auto-login?token=${token}`
   });
-}
+};

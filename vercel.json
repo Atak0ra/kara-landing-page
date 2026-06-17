@@ -1,19 +1,10 @@
 {
   "version": 2,
   "outputDirectory": "front",
-  "functions": {
-    "api/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/front/$1"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     }
   ]
 }
