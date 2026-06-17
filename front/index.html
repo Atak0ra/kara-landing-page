@@ -24,7 +24,7 @@
   <meta name="twitter:description" content="Enregistrement vocal, transcription automatique et dossiers patients. Vos données restent sur votre serveur local.">
   <meta name="twitter:image"       content="https://kara.compeel.com/og-image.png">
 
-  <!-- Favicon SVG inline (pas de fichier externe requis) -->
+  <!-- Favicon SVG inline -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1a14'/><text y='.9em' font-size='72' font-family='Georgia,serif' fill='%234aab87' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>K</text></svg>">
   <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1a14'/><text y='.9em' font-size='72' font-family='Georgia,serif' fill='%234aab87' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='10'>K</text></svg>">
 
@@ -47,10 +47,7 @@
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Afrique francophone"
-      }
+      "areaServed": { "@type": "Place", "name": "Afrique francophone" }
     },
     "provider": {
       "@type": "Organization",
@@ -109,12 +106,16 @@
         <p class="hero-note">Pas de cloud · Pas d'abonnement · Fonctionne hors-ligne</p>
       </div>
 
-      <!-- QR code démo — visible desktop uniquement, affiché dynamiquement via /api/demo-token -->
-      <div class="hero-qr" id="demo-qr-wrap" hidden aria-label="QR code pour accéder à la démo KARA sur mobile">
-        <a id="demo-qr-link" href="https://demo-kara.compeel.com" target="_blank" rel="noopener" class="hero-qr-inner">
+      <!-- QR code démo — visible desktop uniquement -->
+      <div class="hero-qr" id="demo-qr-wrap" aria-label="QR code pour accéder à la démo KARA sur mobile">
+        <a id="demo-qr-link"
+           href="https://demo-kara.compeel.com/auth/auto-login?token=DEMO_2025_KARA_X7mP9q"
+           target="_blank"
+           rel="noopener"
+           class="hero-qr-inner">
           <img id="demo-qr-img"
                class="hero-qr-img"
-               src=""
+               src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&bgcolor=0d1a14&color=4aab87&qzone=1&data=https%3A%2F%2Fdemo-kara.compeel.com%2Fauth%2Fauto-login%3Ftoken%3DDEMO_2025_KARA_X7mP9q"
                alt="QR code — accès démo KARA avec connexion automatique"
                width="120"
                height="120">
@@ -131,7 +132,7 @@
         </svg>
       </div>
 
-      <!-- Barre de confiance — intégrée dans le hero -->
+      <!-- Barre de confiance -->
       <div class="trust-bar">
         <div class="container trust-inner">
           <div class="trust-item">
@@ -183,7 +184,7 @@
               </div>
               <div class="feature-body">
                 <h3>Enregistrement vocal</h3>
-                <p>Un bouton, une pression. Le soignant dicte consultations, soins infirmiers, observations ; même hors-ligne.</p>
+                <p>Un bouton, une pression. Le soignant dicte consultations, soins infirmiers, observations — même hors-ligne.</p>
               </div>
             </div>
 
@@ -399,26 +400,6 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
-
-    // QR code démo — récupère l'URL depuis l'API (token injecté par Vercel)
-    (async () => {
-      const qrWrap = document.getElementById('demo-qr-wrap');
-      if (!qrWrap) return;
-      try {
-        const res = await fetch('/api/demo-token');
-        if (!res.ok) return;
-        const { url } = await res.json();
-        if (!url) return;
-        // Génère le QR via l'API publique QR Server (pas de dépendance JS)
-        const qrImg = document.getElementById('demo-qr-img');
-        const qrLink = document.getElementById('demo-qr-link');
-        if (qrImg) qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&bgcolor=0d1a14&color=4aab87&qzone=1&data=${encodeURIComponent(url)}`;
-        if (qrLink) qrLink.href = url;
-        if (qrWrap) qrWrap.removeAttribute('hidden');
-      } catch (e) {
-        // Silencieux — le QR n'apparaît pas si l'API échoue
-      }
-    })();
   </script>
 
 </body>
