@@ -301,6 +301,14 @@ body {
   border-radius: 8px;
   padding: 1.25rem;
   backdrop-filter: blur(8px);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .2s, background .2s;
+}
+
+.hero-qr-inner:hover {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(74, 171, 135, .4);
 }
 
 .hero-qr-img {
