@@ -281,6 +281,60 @@ body {
   margin-top: 1rem;
 }
 
+/* ── Hero QR code ─────────────────────────────────────────────── */
+.hero-qr {
+  display: none; /* caché sur mobile */
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-60%);
+  z-index: 2;
+}
+
+.hero-qr-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  padding: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
+.hero-qr-img {
+  width: 120px;
+  height: 120px;
+  display: block;
+  border-radius: 4px;
+}
+
+.hero-qr-label {
+  font-size: .6875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.75);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero-qr-sub {
+  font-size: .625rem;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .06em;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-qr { display: block; }
+  .hero-content { max-width: calc(100% - 200px); }
+}
+
+@media (min-width: 1280px) {
+  .hero-qr { right: 4rem; }
+}
+
 /* ── Trust bar ─────────────────────────────────────────────────── */
 .trust-bar {
   background: rgba(0,0,0,.25);

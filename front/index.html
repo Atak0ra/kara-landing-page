@@ -109,6 +109,20 @@
         <p class="hero-note">Pas de cloud · Pas d'abonnement · Fonctionne hors-ligne</p>
       </div>
 
+      <!-- QR code démo — visible desktop uniquement, affiché dynamiquement via /api/demo-token -->
+      <div class="hero-qr" id="demo-qr-wrap" hidden aria-label="QR code pour accéder à la démo KARA sur mobile">
+        <a id="demo-qr-link" href="https://demo-kara.compeel.com" target="_blank" rel="noopener" class="hero-qr-inner">
+          <img id="demo-qr-img"
+               class="hero-qr-img"
+               src=""
+               alt="QR code — accès démo KARA avec connexion automatique"
+               width="120"
+               height="120">
+          <p class="hero-qr-label">Tester sur votre téléphone</p>
+          <p class="hero-qr-sub">Scannez · Connexion automatique</p>
+        </a>
+      </div>
+
       <!-- Ligne ECG animée -->
       <div class="pulse-wrap" aria-hidden="true">
         <svg class="pulse-svg" viewBox="0 0 1400 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -385,6 +399,26 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+
+    // QR code démo — récupère l'URL depuis l'API (token injecté par Vercel)
+    (async () => {
+      const qrWrap = document.getElementById('demo-qr-wrap');
+      if (!qrWrap) return;
+      try {
+        const res = await fetch('/api/demo-token');
+        if (!res.ok) return;
+        const { url } = await res.json();
+        if (!url) return;
+        // Génère le QR via l'API publique QR Server (pas de dépendance JS)
+        const qrImg = document.getElementById('demo-qr-img');
+        const qrLink = document.getElementById('demo-qr-link');
+        if (qrImg) qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&bgcolor=0d1a14&color=4aab87&qzone=1&data=${encodeURIComponent(url)}`;
+        if (qrLink) qrLink.href = url;
+        if (qrWrap) qrWrap.removeAttribute('hidden');
+      } catch (e) {
+        // Silencieux — le QR n'apparaît pas si l'API échoue
+      }
+    })();
   </script>
 
 </body>
