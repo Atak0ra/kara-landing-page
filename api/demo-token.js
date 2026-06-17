@@ -3,10 +3,10 @@
  * Retourne l'URL d'auto-login pour la démo KARA.
  *
  * Variable d'environnement à définir sur Vercel :
- *   DEMO_ACCESS_TOKEN = votre_token_secret
+ *   DEMO_ACCESS_TOKEN = DEMO_2025_KARA_X7mP9q  (ou votre token)
  *
  * Endpoint : GET /api/demo-token
- * Réponse  : { "url": "https://demo-kara.compeel.com/auto-login?token=..." }
+ * Réponse  : { "url": "https://demo-kara.compeel.com/auth/auto-login?token=..." }
  */
 export default function handler(req, res) {
   const token = process.env.DEMO_ACCESS_TOKEN;
@@ -17,6 +17,6 @@ export default function handler(req, res) {
 
   res.setHeader('Cache-Control', 'public, max-age=3600'); // cache 1h
   res.status(200).json({
-    url: `https://demo-kara.compeel.com/auto-login?token=${token}`
+    url: `https://demo-kara.compeel.com/auth/auto-login?token=${token}`
   });
 }
