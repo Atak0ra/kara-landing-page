@@ -9,24 +9,7 @@ import { Scene4Recorder } from "./scenes/Scene4Recorder";
 import { Scene5Transcription } from "./scenes/Scene5Transcription";
 import { Scene6DossierSearch } from "./scenes/Scene6DossierSearch";
 import { Scene7Guarantees } from "./scenes/Scene7Guarantees";
-
-// Scene imports (will be added incrementally in later tasks)
-// Placeholder until scenes are implemented:
-const PlaceholderScene: React.FC<{ label: string; bg: string }> = ({ label, bg }) => (
-  <AbsoluteFill
-    style={{
-      backgroundColor: bg,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      fontSize: 64,
-      color: bg === "#1A1A1A" ? "#FFFFFF" : "#1A1A1A",
-      fontFamily: "sans-serif",
-    }}
-  >
-    {label}
-  </AbsoluteFill>
-);
+import { Scene8CTA } from "./scenes/Scene8CTA";
 
 export interface KaraVideoProps {
   contactUrl?: string;
@@ -59,7 +42,7 @@ export const KaraVideo: React.FC<KaraVideoProps> = ({ contactUrl = "kara.health/
         <Scene7Guarantees />
       </Sequence>
       <Sequence from={s8.from} durationInFrames={s8.duration}>
-        <PlaceholderScene label="Scene 8 — CTA" bg="#1A1A1A" />
+        <Scene8CTA contactUrl={contactUrl} />
       </Sequence>
     </AbsoluteFill>
   );
