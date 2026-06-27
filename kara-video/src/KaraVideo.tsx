@@ -21,11 +21,11 @@ const PlaceholderScene: React.FC<{ label: string; bg: string }> = ({ label, bg }
   </AbsoluteFill>
 );
 
-interface KaraVideoProps {
-  contactUrl: string;
+export interface KaraVideoProps {
+  contactUrl?: string;
 }
 
-export const KaraVideo: React.FC<KaraVideoProps> = ({ contactUrl }) => {
+export const KaraVideo: React.FC<KaraVideoProps> = ({ contactUrl = "kara.health/demo" }) => {
   const { s1, s2, s3, s4, s5, s6, s7, s8 } = SCENE_FRAMES;
 
   return (
