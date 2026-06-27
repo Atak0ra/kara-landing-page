@@ -77,7 +77,7 @@ export const Scene6DossierSearch: React.FC = () => (
 
       {/* Search — starts at frame 160 */}
       <Sequence from={160} durationInFrames={260} layout="none">
-        <MockupSearch startFrame={0} />
+        <MockupSearch />
       </Sequence>
     </div>
   </AbsoluteFill>

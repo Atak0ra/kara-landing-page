@@ -25,6 +25,8 @@ export const Scene4Recorder: React.FC = () => {
         backgroundColor: COLORS.lightBg,
         alignItems: "center",
         justifyContent: "center",
+        paddingTop: 100,
+        paddingBottom: 100,
       }}
     >
       <div

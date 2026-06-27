@@ -5,21 +5,18 @@ import { COLORS, EASING } from "../constants";
 import { inter } from "../fonts";
 
 interface MockupSearchProps {
-  startFrame?: number;
   query?: string;
   resultText?: string;
 }
 
 export const MockupSearch: React.FC<MockupSearchProps> = ({
-  startFrame = 0,
   query = "douleur thoracique jan",
   resultText = "15 jan — Douleur thoracique, ECG normal",
 }) => {
   const frame = useCurrentFrame();
-  const localFrame = frame - startFrame;
 
   // Fade in search bar
-  const barOpacity = interpolate(localFrame, [0, 15], [0, 1], {
+  const barOpacity = interpolate(frame, [0, 15], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: EASING,
@@ -29,7 +26,7 @@ export const MockupSearch: React.FC<MockupSearchProps> = ({
   const charsToShow = Math.max(
     0,
     Math.floor(
-      interpolate(localFrame, [0, 90], [0, query.length], {
+      interpolate(frame, [0, 90], [0, query.length], {
         extrapolateLeft: "clamp",
         extrapolateRight: "clamp",
       })
@@ -37,13 +34,13 @@ export const MockupSearch: React.FC<MockupSearchProps> = ({
   );
 
   // Result appears after typing is done
-  const resultOpacity = interpolate(localFrame, [100, 120], [0, 1], {
+  const resultOpacity = interpolate(frame, [100, 120], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: EASING,
   });
 
-  const cursorVisible = localFrame % 20 < 10 && charsToShow < query.length;
+  const cursorVisible = frame % 20 < 10 && charsToShow < query.length;
 
   return (
     <div style={{ width: 760, display: "flex", flexDirection: "column", gap: 16 }}>

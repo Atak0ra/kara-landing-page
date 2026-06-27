@@ -115,6 +115,8 @@ export const Scene7Guarantees: React.FC = () => (
       backgroundColor: COLORS.darkBg,
       alignItems: "center",
       justifyContent: "center",
+      paddingTop: 100,
+      paddingBottom: 100,
     }}
   >
     <div style={{ display: "flex", gap: 32 }}>
