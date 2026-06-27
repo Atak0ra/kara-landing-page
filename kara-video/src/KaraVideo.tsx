@@ -7,6 +7,7 @@ import { Scene2Pain } from "./scenes/Scene2Pain";
 import { Scene3Reveal } from "./scenes/Scene3Reveal";
 import { Scene4Recorder } from "./scenes/Scene4Recorder";
 import { Scene5Transcription } from "./scenes/Scene5Transcription";
+import { Scene6DossierSearch } from "./scenes/Scene6DossierSearch";
 
 // Scene imports (will be added incrementally in later tasks)
 // Placeholder until scenes are implemented:
@@ -51,7 +52,7 @@ export const KaraVideo: React.FC<KaraVideoProps> = ({ contactUrl = "kara.health/
         <Scene5Transcription />
       </Sequence>
       <Sequence from={s6.from} durationInFrames={s6.duration}>
-        <PlaceholderScene label="Scene 6 — Dossier" bg="#F5F4F0" />
+        <Scene6DossierSearch />
       </Sequence>
       <Sequence from={s7.from} durationInFrames={s7.duration}>
         <PlaceholderScene label="Scene 7 — Guarantees" bg="#1A1A1A" />
