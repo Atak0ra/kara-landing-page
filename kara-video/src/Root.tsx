@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { AnimatedText } from "./components/AnimatedText";
 import { TypewriterText } from "./components/TypewriterText";
+import { MockupRecorder } from "./components/MockupRecorder";
 import { inter } from "./fonts";
 
 export const RemotionRoot = () => (
@@ -57,6 +58,27 @@ export const RemotionRoot = () => (
         </div>
       )}
       durationInFrames={180}
+      fps={30}
+      width={1080}
+      height={1080}
+    />
+    <Composition
+      id="TestRecorder"
+      component={() => (
+        <div
+          style={{
+            width: 1080,
+            height: 1080,
+            backgroundColor: "#F5F4F0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <MockupRecorder />
+        </div>
+      )}
+      durationInFrames={120}
       fps={30}
       width={1080}
       height={1080}
