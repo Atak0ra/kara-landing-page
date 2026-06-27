@@ -2,6 +2,8 @@
 import React from "react";
 import { AbsoluteFill, Sequence } from "remotion";
 import { SCENE_FRAMES } from "./constants";
+import { Scene1Hook } from "./scenes/Scene1Hook";
+import { Scene2Pain } from "./scenes/Scene2Pain";
 
 // Scene imports (will be added incrementally in later tasks)
 // Placeholder until scenes are implemented:
@@ -31,10 +33,10 @@ export const KaraVideo: React.FC<KaraVideoProps> = ({ contactUrl = "kara.health/
   return (
     <AbsoluteFill>
       <Sequence from={s1.from} durationInFrames={s1.duration}>
-        <PlaceholderScene label="Scene 1 — Hook" bg="#1A1A1A" />
+        <Scene1Hook />
       </Sequence>
       <Sequence from={s2.from} durationInFrames={s2.duration}>
-        <PlaceholderScene label="Scene 2 — Pain" bg="#1A1A1A" />
+        <Scene2Pain />
       </Sequence>
       <Sequence from={s3.from} durationInFrames={s3.duration}>
         <PlaceholderScene label="Scene 3 — Reveal" bg="#F5F4F0" />
