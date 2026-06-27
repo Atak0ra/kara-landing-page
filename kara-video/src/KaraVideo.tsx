@@ -4,6 +4,7 @@ import { AbsoluteFill, Sequence } from "remotion";
 import { SCENE_FRAMES } from "./constants";
 import { Scene1Hook } from "./scenes/Scene1Hook";
 import { Scene2Pain } from "./scenes/Scene2Pain";
+import { Scene3Reveal } from "./scenes/Scene3Reveal";
 
 // Scene imports (will be added incrementally in later tasks)
 // Placeholder until scenes are implemented:
@@ -39,7 +40,7 @@ export const KaraVideo: React.FC<KaraVideoProps> = ({ contactUrl = "kara.health/
         <Scene2Pain />
       </Sequence>
       <Sequence from={s3.from} durationInFrames={s3.duration}>
-        <PlaceholderScene label="Scene 3 — Reveal" bg="#F5F4F0" />
+        <Scene3Reveal />
       </Sequence>
       <Sequence from={s4.from} durationInFrames={s4.duration}>
         <PlaceholderScene label="Scene 4 — Recorder" bg="#F5F4F0" />
