@@ -105,6 +105,10 @@
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Demander une installation</a>
           <a href="https://demo-kara.compeel.com" target="_blank" rel="noopener" class="btn btn-demo">Voir la démo →</a>
+          <button type="button" class="btn btn-ghost-light btn-video-play" id="open-video-modal" aria-label="Voir la vidéo de présentation KARA">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Voir la présentation
+          </button>
           <a href="#fonctionnement" class="btn btn-ghost-light">Comment ça marche</a>
         </div>
 
@@ -312,6 +316,33 @@
       </div>
     </section>
 
+    <!-- Témoignages -->
+    <section class="testimonials" id="temoignages">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="eyebrow">Témoignages</p>
+          <h2 class="section-title">Ils ont testé KARA.<br><em>Leur verdict.</em></h2>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <figure class="testimonial-card fade-in">
+            <blockquote class="testimonial-quote">
+              <p>« J'ai testé KARA et l'idée est tout simplement géniale. Pouvoir dicter ses observations et les retrouver structurées en quelques minutes, c'est exactement ce dont nos structures ont besoin. Et la recherche dans les dossiers, c'est un vrai plus ; on manque souvent de données pour nos thèses et travaux de recherche. KARA peut changer ça. »</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">AF</div>
+              <div class="testimonial-meta">
+                <strong>Dr Amadou Fall</strong>
+                <span>Médecin · Dakar, Sénégal</span>
+              </div>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section class="contact" id="contact">
       <div class="container">
@@ -385,6 +416,19 @@
     </div>
   </footer>
 
+  <!-- Modal vidéo -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Présentation KARA" hidden>
+    <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+    <div class="video-modal-inner">
+      <button type="button" class="video-modal-close" id="close-video-modal" aria-label="Fermer la vidéo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <video class="video-modal-player" id="kara-video" preload="none" controls playsinline>
+        <source src="kara.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
   <script>
     // Fade-in au scroll
     const io = new IntersectionObserver(entries => {
@@ -402,6 +446,30 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
+
+    // Modal vidéo
+    const modal     = document.getElementById('video-modal');
+    const video     = document.getElementById('kara-video');
+    const backdrop  = document.getElementById('video-modal-backdrop');
+    const btnOpen   = document.getElementById('open-video-modal');
+    const btnClose  = document.getElementById('close-video-modal');
+
+    function openModal() {
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      video.play();
+    }
+    function closeModal() {
+      video.pause();
+      video.currentTime = 0;
+      modal.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    btnOpen.addEventListener('click', openModal);
+    btnClose.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
   </script>
 
 </body>
